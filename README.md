@@ -51,10 +51,10 @@ This project is an **AI-based medical assistant** built using the RAG (Retrieval
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/medical-rag-assistant.git
+git clone https://github.com/your-username/Medico-Humsafar.git
 
 # 2. Navigate to the project folder
-cd medical-rag-assistant
+cd Medico-Humsafar
 
 # 3. Install dependencies
 npm install
