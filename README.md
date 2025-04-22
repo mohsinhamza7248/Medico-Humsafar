@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧠 AI-Powered Medical Report Assistant
 
-## Getting Started
+This project is an **AI-based medical assistant** built using the RAG (Retrieval-Augmented Generation) architecture. It allows users to upload medical reports (PDF/images), extract summaries using **Gemini**, and ask questions about the uploaded reports. The app uses **semantic search** powered by **Pinecone** and delivers accurate, context-aware responses using **Gemini AI**.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 📄 Upload medical reports (PDF or image)
+- 🧠 Extracts key insights using Gemini (Google AI)
+- 💬 Ask questions about the uploaded report
+- 🔍 Retrieves relevant context using Pinecone vector search
+- 🤖 Real-time streaming answers powered by Gemini
+- ✅ Clean and modern UI with Tailwind CSS + Shadcn UI
+
+---
+
+## 🔑 Key Technologies Covered
+
+| Tech | Description |
+|------|-------------|
+| **RAG (Retrieval-Augmented Generation)** | Combines document retrieval with AI to answer questions contextually. |
+| **Pinecone (Vector Database)** | Used for storing and retrieving relevant chunks from report + user query. |
+| **Next.js (React Framework)** | Full-stack React framework for building both frontend and backend APIs. |
+| **LangChain (LLM Application Framework)** | (Optional integration ready) Can structure prompts and chains for LLMs. |
+| **Transformers.js (Hugging Face)** | For using local or cloud-based transformer models (future integration). |
+| **Tailwind CSS** | Utility-first CSS framework for responsive design. |
+| **Shadcn UI** | Elegant, accessible React components for clean UI. |
+
+---
+
+## 🖼️ How It Works
+
+1. **Upload Report:**  
+   Upload a PDF or image file. Images are compressed for better performance.
+
+2. **Extract Summary:**  
+   The app uses **Gemini** to extract a summary from the uploaded report.
+
+3. **Chat with Report:**  
+   User types a query.  
+   → It combines the query + summary  
+   → Searches for related content using **Pinecone**  
+   → Final prompt is sent to **Gemini**  
+   → The answer is streamed back in real time.
+
+
+---
+
+## 🧑‍💻 Setup Instructions
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/medical-rag-assistant.git
+
+# 2. Navigate to the project folder
+cd medical-rag-assistant
+
+# 3. Install dependencies
+npm install
+
+# 4. Setup .env with your API keys (Gemini, Pinecone, etc.)
+# Example:
+# GEMINI_API_KEY=your-key
+# PINECONE_API_KEY=your-key
+
+# 5. Run the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
